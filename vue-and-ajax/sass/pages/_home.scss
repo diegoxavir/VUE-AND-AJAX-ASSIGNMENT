@@ -24,10 +24,19 @@ a {
 
 /*--------------------------------*/
 
-.movie-info {
+.movie-info, .movie-info-mobile {
 	background-image: url(../images/storyboard.png);
-	background-size: contain;
 }
+
+.movie-info {
+	display: none;
+}
+
+.movie-info-mobile {
+	background-size: cover;
+}
+
+
 @media screen and (min-width: 1200px) { 
 	.container {
 		margin-top: 0px;
@@ -35,6 +44,12 @@ a {
 
 .movie-info {
 	height: 800px;
+	background-size: contain;
+	display: inline;
+}
+
+.movie-info-mobile {
+	display: none;
 }
 
 .sketch {
