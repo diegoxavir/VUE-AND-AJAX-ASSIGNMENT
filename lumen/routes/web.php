@@ -17,15 +17,15 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-//localhost:3306/lumen/public/books
-$router->get('/books', 'BookController@getAll');
-$router->get('/books/{id}', 'BookController@getAllOne');
-$router->post('/books/add', 'BookController@save');
-$router->post('/books/edit/{id}', 'BookController@update');
-$router->delete('/books/delete/{id}', 'BookController@delete');
+//localhost:3306/lumen/public/movies
+$router->get('/movies', 'MovieController@getAll');
+$router->get('/movies/{id}', 'MovieController@getAllOne');
+$router->post('/movies/add', 'MovieController@save');
+$router->post('/movies/edit/{id}', 'MovieController@update');
+$router->delete('/movies/delete/{id}', 'MovieController@delete');
 
-$router->get('/authors', 'authorController@getAll');
-$router->get('/authors/{id}', 'authorController@getAllOne');
-$router->post('/authors/add', 'authorController@save');
-$router->post('/authors/edit/{id}', 'authorController@update');
-$router->delete('/authors/delete/{id}', 'authorController@delete');
+$router->get('/credits', 'CreditController@getAll');
+$router->get('/credits/{id}', 'CreditController@getAllOne');
+$router->post('/credits/add', 'CreditController@save');
+$router->post('/credits/edit/{id}', 'CreditController@update');
+$router->delete('/credits/delete/{id}', 'CreditController@delete');
