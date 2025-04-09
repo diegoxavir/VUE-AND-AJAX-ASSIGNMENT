@@ -196,6 +196,53 @@ body, p, h1, h2, h3, h4, h5 {
    .l-col-end-12	{grid-column-end: 12;}
    .l-col-end-13	{grid-column-end: 13;}
    .l-col-end-auto	{grid-column-end: auto;}
+
+   .l-row-auto { grid-row: auto; }
+
+.l-row-span-1 { grid-row: span 1 / span 1; }
+.l-row-span-2 { grid-row: span 2 / span 2; }
+.l-row-span-3 { grid-row: span 3 / span 3; }
+.l-row-span-4 { grid-row: span 4 / span 4; }
+.l-row-span-5 { grid-row: span 5 / span 5; }
+.l-row-span-6 { grid-row: span 6 / span 6; }
+.l-row-span-7 { grid-row: span 7 / span 7; }
+.l-row-span-8 { grid-row: span 8 / span 8; }
+.l-row-span-9 { grid-row: span 9 / span 9; }
+.l-row-span-10 { grid-row: span 10 / span 10; }
+.l-row-span-11 { grid-row: span 11 / span 11; }
+.l-row-span-12 { grid-row: span 12 / span 12; }
+.l-row-span-full { grid-row: 1 / -1; }
+
+.l-row-start-1 { grid-row-start: 1; }
+.l-row-start-2 { grid-row-start: 2; }
+.l-row-start-3 { grid-row-start: 3; }
+.l-row-start-4 { grid-row-start: 4; }
+.l-row-start-5 { grid-row-start: 5; }
+.l-row-start-6 { grid-row-start: 6; }
+.l-row-start-7 { grid-row-start: 7; }
+.l-row-start-8 { grid-row-start: 8; }
+.l-row-start-9 { grid-row-start: 9; }
+.l-row-start-10 { grid-row-start: 10; }
+.l-row-start-11 { grid-row-start: 11; }
+.l-row-start-12 { grid-row-start: 12; }
+.l-row-start-13 { grid-row-start: 13; }
+.l-row-start-auto { grid-row-start: auto; }
+
+.l-row-end-1 { grid-row-end: 1; }
+.l-row-end-2 { grid-row-end: 2; }
+.l-row-end-3 { grid-row-end: 3; }
+.l-row-end-4 { grid-row-end: 4; }
+.l-row-end-5 { grid-row-end: 5; }
+.l-row-end-6 { grid-row-end: 6; }
+.l-row-end-7 { grid-row-end: 7; }
+.l-row-end-8 { grid-row-end: 8; }
+.l-row-end-9 { grid-row-end: 9; }
+.l-row-end-10 { grid-row-end: 10; }
+.l-row-end-11 { grid-row-end: 11; }
+.l-row-end-12 { grid-row-end: 12; }
+.l-row-end-13 { grid-row-end: 13; }
+.l-row-end-auto { grid-row-end: auto; }
+
 }
 
 /* ---X-Large Desktop Library Grid Styles--- */
