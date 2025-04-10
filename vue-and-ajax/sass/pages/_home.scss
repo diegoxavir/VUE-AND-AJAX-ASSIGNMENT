@@ -5,10 +5,6 @@ html {
 	background-size: cover;
   }
 
-body {
-
-}
-
 #app {
 	padding: 20px;
 }
@@ -34,6 +30,12 @@ a {
 
 .movie-info-mobile {
 	background-size: cover;
+}
+
+.sketch {
+	img {
+		border: solid 5px grey;
+	}
 }
 
 
@@ -73,8 +75,5 @@ a {
 
 	.container {
 		margin-top: 250px;
-	}
-	
-	.movie-info {
 	}
 	}

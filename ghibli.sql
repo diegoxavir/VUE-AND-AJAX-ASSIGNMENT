@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 09, 2025 at 02:55 AM
+-- Generation Time: Apr 10, 2025 at 01:37 AM
 -- Server version: 8.3.0
 -- PHP Version: 8.2.18
 
@@ -69,12 +69,12 @@ CREATE TABLE IF NOT EXISTS `movies` (
 --
 
 INSERT INTO `movies` (`id`, `title`, `credits_id`, `release_date`, `movie_image`, `created_at`, `updated_at`) VALUES
-(2, 'Whisper of the Heart', 3, '1989-07-29', 'whisper.jpg', '2024-03-07 21:20:36', '2024-03-07 21:20:36'),
-(3, 'My Neighbour Tortoro', 1, '1988-04-16', 'tortoro.jpg', '2024-03-07 21:20:36', '2024-03-07 21:20:36'),
-(4, 'Pom Poko', 2, '1994-07-16', 'pompoko.jpg', '2024-03-07 21:20:36', '2024-03-07 21:20:36'),
-(5, 'Spirited Away', 1, '2001-07-20', 'spirited.jpg', '2024-03-07 21:20:36', '2024-03-07 21:20:36'),
-(6, 'Ponyo', 1, '2009-08-14', 'ponyo.jpg', '2024-03-07 21:20:36', '2024-03-07 21:20:36'),
-(7, 'Howl\'s Moving Castle', 1, '2005-06-10', 'howls.jpg', '2024-03-07 21:20:36', '2024-03-07 21:20:36');
+(2, 'Whisper of the Heart', 3, '1989-07-29', 'whisper-poster.jpg', '2024-03-07 21:20:36', '2024-03-07 21:20:36'),
+(3, 'My Neighbour Tortoro', 1, '1988-04-16', 'tortoro-poster.jpg', '2024-03-07 21:20:36', '2024-03-07 21:20:36'),
+(4, 'Porko Roso', 2, '1994-07-16', 'porko-poster.jpg', '2024-03-07 21:20:36', '2024-03-07 21:20:36'),
+(5, 'Spirited Away', 1, '2001-07-20', 'spirited-poster.jpg', '2024-03-07 21:20:36', '2024-03-07 21:20:36'),
+(6, 'Ponyo', 1, '2009-08-14', 'ponyo-poster.jpg', '2024-03-07 21:20:36', '2024-03-07 21:20:36'),
+(7, 'Howl\'s Moving Castle', 1, '2005-06-10', 'howls-poster.jpg', '2024-03-07 21:20:36', '2024-03-07 21:20:36');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
