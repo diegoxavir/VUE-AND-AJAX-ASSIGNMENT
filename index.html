@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>Book Store API</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato%7CRaleway" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="module" src="js/main.js"></script>
+</head>
+
+<body>
+    <div id="app">
+    <main class="full-width-grid-con">
+        <section class="grid-con ">
+            <h1 class="hidden">Movie information</h1>
+            <div v-if="selectedMovie" class="movie-info col-span-full m-col-span-6">
+                <img :src="`images/${selectedMovie.movie_image}`" alt="poster">
+                <h1>{{selectedMovie.title}}</h1>
+                <p><strong>Director:</strong> {{selectedMovie.director}}</p>
+                <p><strong>Writer:</strong> {{selectedMovie.writer}}</p>
+                <p><strong>Release Date:</strong> {{selectedMovie.release_date}}</p>
+            </div>
+
+            <h1 class="hidden">movie sketches to click on</h1>
+            <div class="col-span-full m-col-span-6" id="movie-sketches-section">
+            <ul class="grid-con">
+                <li class="sketch col-span-full m-col-span-6 l-col-span-6" v-for="movie in movies" :key="movie.id">
+                    <h3 @click="getMovie(movie.id)">{{ movie.title }}</h3>
+                    <img :src="`images/${movie.posterSketch}`" alt="">
+                </li>
+            </ul>
+        </div>
+        </section>
+    </main>
+
+    </div>
+</body>
+</html>
+
+
