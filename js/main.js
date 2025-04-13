@@ -14,7 +14,7 @@ const app = Vue.createApp({
 
     methods: {
         fetchAllMovies() {
-            fetch('http://localhost:8000/movies')
+            fetch('http://localhost/ghibli-lumen/public/movies')
                 .then(response => response.json())
                 .then(data => {
                     this.movies = data;
@@ -27,7 +27,7 @@ const app = Vue.createApp({
 
         getMovie(id) {
             this.loading = true;
-            fetch(`http://localhost:8000/movies/${id}`)
+            fetch(`http://localhost/ghibli-lumen/public/movies/${id}`)
                 .then(response => response.json())
                 .then(data => {
                     this.selectedMovie = data;
