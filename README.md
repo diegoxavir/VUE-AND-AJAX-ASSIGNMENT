@@ -23,7 +23,7 @@ This project is a responsive Vue.js web application that showcases movie sketche
 1. Clone the repo or download the zip
 2. make sure wamp or mamp is running and place the ghibli lumen in the www folder
 
-## licences 
+## Licences 
 MIT licence
 Created by Diego Rodriguez and Cassidy Pelacek
 
