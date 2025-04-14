@@ -1,42 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <title>Book Store API</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato%7CRaleway" rel="stylesheet">
-    <link href="css/grid.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script type="module" src="js/main.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  <title>Studio Ghibli API</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato%7CRaleway" rel="stylesheet" />
+  <link href="css/grid.css" rel="stylesheet" />
+  <link href="css/main.css" rel="stylesheet" />
+
+  <!-- Glide.js styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css" />
+
+  <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script defer src="js/main.js" type="module"></script>
+
+  <script src="js/mobileSwiper.js"></script>
+
 </head>
 
 <body>
-    <div id="app">
+  <div id="app">
     <main class="full-width-grid-con">
-        <section class="grid-con ">
-            <h1 class="hidden">Movie information</h1>
-            <div v-if="selectedMovie" class="movie-info col-span-full m-col-span-6">
-                <img :src="`images/${selectedMovie.movie_image}`" alt="poster">
-                <h1>{{selectedMovie.title}}</h1>
-                <p><strong>Director:</strong> {{selectedMovie.director}}</p>
-                <p><strong>Writer:</strong> {{selectedMovie.writer}}</p>
-                <p><strong>Release Date:</strong> {{selectedMovie.release_date}}</p>
+        <section class="grid-con">
+            <h1 class="hidden">Movie Information</h1>
+            <h1 class="col-span-full title">Select your Studio Ghibli Movie Sketch!</h1>
+        
+            <!-- Show this section if a movie is selected -->
+            <div v-if="selectedMovie" class="movie-info col-span-full m-col-start-2 m-col-span-6" ref="movieInfo">
+                <img :src="`images/${selectedMovie.movie_image}`" alt="poster" />
+                <h1>{{ selectedMovie.title }}</h1>
+                <p><strong>Director:</strong> {{ selectedMovie.director }}</p>
+                <p><strong>Writer:</strong> {{ selectedMovie.writer }}</p>
+                <p><strong>Release Date:</strong> {{ selectedMovie.release_date }}</p>
+            </div>
+        
+            <!-- Show this section with a placeholder if no movie is selected -->
+            <div v-else class="movie-info col-span-full m-col-span-6" ref="movieInfo">
+                <img src="images/ghibli-sketch-book.png" alt="ghibli sketch book" />
+                <h1>Select a movie to see the details!</h1>
             </div>
 
-            <h1 class="hidden">movie sketches to click on</h1>
-            <div class="col-span-full m-col-span-6" id="movie-sketches-section">
-            <ul class="grid-con">
-                <li class="sketch col-span-full m-col-span-6 l-col-span-6" v-for="movie in movies" :key="movie.id">
-                    <h3 @click="getMovie(movie.id)">{{ movie.title }}</h3>
-                    <img :src="`images/${movie.posterSketch}`" alt="">
+        <h1 class="hidden">Movie sketches to click on</h1>
+        <div class="col-span-full m-col-span-6" id="movie-sketches-section">
+          <!-- Mobile Slider View -->
+          <div class="glide" v-if="windowWidth < 712">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__slides">
+                <li class="glide__slide sketch" v-for="movie in movies" :key="movie.id" @click="getMovie(movie.id)">
+                  <h3>{{ movie.title }}</h3>
+                  <img :src="`images/${movie.posterSketch}`" alt="" />
                 </li>
-            </ul>
-        </div>
-        </section>
-    </main>
+              </ul>
+            </div>
+            <div class="glide__arrows" data-glide-el="controls">
+              <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+              <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+            </div>
+            <div class="glide__bullets" data-glide-el="controls[nav]">
+              <button class="glide__bullet" v-for="(movie, index) in movies" :key="index" :data-glide-dir="`=${index}`"></button>
+            </div>
+          </div>
 
-    </div>
+          <!-- Desktop Grid View -->
+          <ul class="grid-con" v-else>
+            <li class="sketch col-span-full m-col-span-6 l-col-span-6" v-for="movie in movies" :key="movie.id" @click="getMovie(movie.id)">
+              <h3>{{ movie.title }}</h3>
+              <img :src="`images/${movie.posterSketch}`" alt="" />
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
 

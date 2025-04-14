@@ -5,6 +5,7 @@ const app = Vue.createApp({
             selectedMovie: null,
             loading: false,
             error: null,
+            windowWidth: window.innerWidth,
         };
     },
 
@@ -12,7 +13,24 @@ const app = Vue.createApp({
         this.fetchAllMovies();
     },
 
+    mounted() {
+        window.addEventListener('resize', this.updateWindowWidth);
+    },
+
+    beforeUnmount() {
+        window.removeEventListener('resize', this.updateWindowWidth);
+    },
+
     methods: {
+        updateWindowWidth() {
+            this.windowWidth = window.innerWidth;
+        },
+        scrollToMovieInfo() {
+            const movieInfo = this.$refs.movieInfo;
+            if (movieInfo) {
+                movieInfo.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        },
         fetchAllMovies() {
             fetch('http://localhost/ghibli-lumen/public/movies')
                 .then(response => response.json())
@@ -32,13 +50,13 @@ const app = Vue.createApp({
                 .then(data => {
                     this.selectedMovie = data;
                     this.loading = false;
+                    this.scrollToMovieInfo();
                 })
                 .catch(error => {
                     this.error = "Failed to fetch movie info.";
                     console.error('Error fetching movie info:', error);
                     this.loading = false;
                 });
-        }
+        },
     }
 }).mount("#app");
-
