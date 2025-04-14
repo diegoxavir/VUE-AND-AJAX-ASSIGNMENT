@@ -29,7 +29,7 @@
             <h1 class="col-span-full title">Select your Studio Ghibli Movie Sketch!</h1>
         
             <!-- Show this section if a movie is selected -->
-            <div v-if="selectedMovie" class="movie-info col-span-full m-col-start-2 m-col-span-6" ref="movieInfo">
+            <div v-if="selectedMovie" class="movie-info col-span-full m-col-span-6" ref="movieInfo">
                 <img :src="`images/${selectedMovie.movie_image}`" alt="poster" />
                 <h1>{{ selectedMovie.title }}</h1>
                 <p><strong>Director:</strong> {{ selectedMovie.director }}</p>
